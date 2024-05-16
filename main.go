@@ -109,7 +109,7 @@ func main() {
 	cNumPixels := C.size_t(width * height)
 	C.posterize(cImage4bit, cPalette24bit, cRgbaIn, cNumPixels)
 
-	// Convert back and write to JPEG file
+	// Convert back so we will be able to write it to a JPEG image
 	C.applyColorsToPixelBuffer(cRgbaIn, cImage4bit, cPalette24bit, cNumPixels)
 
 	// Convert linear RGBA to image
